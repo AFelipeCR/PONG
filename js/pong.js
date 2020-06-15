@@ -42,4 +42,11 @@ class Pong {
         this.controlBall.move();
     }
 
+    showGameOver(){
+        this.context.clearRect(this.posX, this.posY, this.canvas.width, this.canvas.height);
+        this.context.font="30px Consolas";
+        this.context.fillText("GAME OVER", (this.canvas.width - 30 * 4) / 2, 30);
+        this.context.fillText(scoreA + ' | ' + scoreB, (this.canvas.width - 30 * 3) / 2, 70);
+    }
+
 }
