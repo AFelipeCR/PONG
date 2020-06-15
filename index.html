@@ -10,8 +10,9 @@
 <body>
     <div class="">
         <label>Puntos para ganar:</label>
-        <input id="limit-score" type="number" max="21" min="3" value="7">
+        <input id="limit-score" type="number" max="21" min="3" value="7" onchange="if(this.value>maxScore) this.value=maxScore; if(this.value<minScore) this.value=minScore;">
         <button id="start-button" onclick="startGame();">Jugar</button>
+        <button id="stop-button" onclick="isStopped=true;" hidden>Stop</button>
     </div>
     <canvas id="canvas_pong" width="480" height="320"></canvas>
 

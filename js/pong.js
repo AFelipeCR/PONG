@@ -48,5 +48,4 @@ class Pong {
         this.context.fillText("GAME OVER", (this.canvas.width - 30 * 4) / 2, 30);
         this.context.fillText(scoreA + ' | ' + scoreB, (this.canvas.width - 30 * 3) / 2, 70);
     }
-
 }
