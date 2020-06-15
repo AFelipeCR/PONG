@@ -15,8 +15,8 @@ class Pong {
         var paddleWidth= 10;
         var paddleHeight = 75;
 
-        this.paddleL = new Rectangle(this.canvas, this.context, paddleWidth*5, (this.canvas.height - paddleHeight) / 2, "#dddd11");
-        this.paddleR = new Rectangle(this.canvas, this.context, this.canvas.width - paddleWidth * 10, (this.canvas.height - paddleHeight) / 2, "#dddd11");
+        this.paddleL = new Rectangle(this.canvas, this.context, paddleWidth * 3, (this.canvas.height - paddleHeight) / 2, "#dddd11");
+        this.paddleR = new Rectangle(this.canvas, this.context, this.canvas.width - paddleWidth * 4, (this.canvas.height - paddleHeight) / 2, "#dddd11");
 
         this.paddleL.setWidth(paddleWidth);
         this.paddleR.setWidth(paddleWidth);
