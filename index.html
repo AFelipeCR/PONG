@@ -27,6 +27,14 @@
         <canvas id="canvas_pong" class="canvas-p"></canvas>
     </section>
 
+    <script type="text/javascript">
+    	var canvasWidth=document.getElementsByClassName("game-panel")[0].getBoundingClientRect().width;
+    	document.getElementById('canvas_pong').width=canvasWidth;
+    	document.getElementById('canvas_pong').height=canvasWidth * 1 / 2;
+
+        var relSize = canvasWidth / 480;
+    </script>
+
     <script type="text/javascript" src="./js/figure.js"></script>
     <script type="text/javascript" src="./js/rectangle.js"></script>
     <script type="text/javascript" src="./js/circle.js"></script>

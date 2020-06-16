@@ -12,8 +12,8 @@ class Pong {
         this.posX = posX;
         this.posY = posY;
 
-        var paddleWidth= 10;
-        var paddleHeight = 75;
+        var paddleWidth= 10 * relSize;
+        var paddleHeight = 75 * relSize;
 
         this.paddleL = new Rectangle(this.canvas, this.context, paddleWidth * 3, (this.canvas.height - paddleHeight) / 2, "#dddd11");
         this.paddleR = new Rectangle(this.canvas, this.context, this.canvas.width - paddleWidth * 4, (this.canvas.height - paddleHeight) / 2, "#dddd11");
@@ -29,7 +29,7 @@ class Pong {
 
         this.ball = new Circle(this.canvas, this.context, (this.canvas.width / 2), this.canvas.height / 2, "#dd0027");
 
-        this.ball.radius = 5;
+        this.ball.radius = 5*relSize;
         this.controlBall = new ControlBall(this.document, this.canvas, this.context, this.ball, this.paddleL,this.paddleR);
     }
 
