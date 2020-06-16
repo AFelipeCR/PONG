@@ -5,19 +5,28 @@ body {
     justify-content: space-around;
 }
 
+.buttons {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    height: 40px;
+    width: 100px;
+}
+
 .canvas-p {
     border: 1px solid yellow;
+    border-style: solid dotted;
     height: 500px;
     width: 100%;
 }
 
 .game {
     background-color: white;
-    border: 1px solid yellow;
-    height: 150px;
+    border: 2px solid #2974EE;
+    height: 250px;
 }
 
 .game-config {
+    align-items: center;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -25,13 +34,27 @@ body {
     margin: 0 10px 0 10px;
 }
 
-.score-number {
-    font-size: 30px;
-}
-
 .game-panel {
     color: white;
     width: 80%;
+}
+
+.github-img {
+    border: none;
+    width: 30px;
+}
+
+.github-img:hover {
+    border: 1px solid greenyellow;
+}
+
+.left-player-score, .right-player-score {
+    font-size: 45px;
+    font-weight: bolder;
+}
+
+.limit-score {
+    width: 40px;
 }
 
 .score-wrapper {
@@ -43,8 +66,14 @@ body {
 
 .start-btn {
     background-color: yellowgreen;
+    border: 1px solid yellowgreen;
 }
 
-.start-btn:hover {
+.start-btn:hover, .stop-btn:hover {
     background-color: white;
+}
+
+.stop-btn {
+    background-color: red;
+    border: 1px solid red;
 }
