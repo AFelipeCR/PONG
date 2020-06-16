@@ -28,8 +28,8 @@ class ControlBall extends Control {
                 && this.figure.posX + this.deltaX > this.paddleR.posX
                 && this.figure.posX + this.deltaX < this.paddleR.posX + this.paddleR.width){
                 this.horizontalDirRight = false;
-                this.deltaY += 0.05;
-                this.deltaX += 0.1;
+                this.deltaY += 0.05*relSize;
+                this.deltaX += 0.1*relSize;
             } else if (this.figure.posX + this.deltaX > this.rightLimit) {
                 scoreA++;
                 this.deltaY=1*relSize;
@@ -47,8 +47,8 @@ class ControlBall extends Control {
                 && this.figure.posX - this.deltaX < this.paddleL.posX + this.paddleL.width
                 && this.figure.posX - this.deltaX > this.paddleL.posX){
                 this.horizontalDirRight = true;
-                this.deltaY += 0.05;
-                this.deltaX += 0.1;
+                this.deltaY += 0.05*relSize;
+                this.deltaX += 0.1*relSize;
             } else if (this.figure.posX - this.deltaX < this.leftLimit) {
                 scoreB++;
                 this.deltaY=1*relSize;
