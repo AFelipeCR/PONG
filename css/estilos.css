@@ -1,15 +1,50 @@
-head {
-    padding: 0;
-    margin: 0;
-}
-
 body {
-    padding: 0;
-    margin: 0;
+    align-items: center;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
 }
 
-canvas {
-    background: rgb(226, 209, 209);
-    display: block;
-    margin: auto;
+.canvas-p {
+    border: 1px solid yellow;
+    height: 500px;
+    width: 100%;
+}
+
+.game {
+    background-color: white;
+    border: 1px solid yellow;
+    height: 150px;
+}
+
+.game-config {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    margin: 0 10px 0 10px;
+}
+
+.score-number {
+    font-size: 30px;
+}
+
+.game-panel {
+    color: white;
+    width: 80%;
+}
+
+.score-wrapper {
+    align-items: center;
+    display: flex;
+    height: 60px;
+    justify-content: space-around;
+}
+
+.start-btn {
+    background-color: yellowgreen;
+}
+
+.start-btn:hover {
+    background-color: white;
 }
