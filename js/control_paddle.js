@@ -9,9 +9,9 @@ class ControlPaddle extends Control {
 
     constructor(document, canvas, context, figure, isKeyboard) {
         super(document, canvas, context, figure);
-        this.isKeyboard=isKeyboard;
+        this.isKeyboard = isKeyboard;
 
-        if(isKeyboard)
+        if (isKeyboard)
             this.keyCommand = new KeyCommand(this.document);
         else
             this.MouseCommand = new MouseCommand(this.document, this.canvas);
@@ -32,18 +32,19 @@ class ControlPaddle extends Control {
 
                     break;
             }
-        }else{
+        } else {
             if (inMouse) {
                 relativeY -= this.canvas.offsetTop;
-
-                if (relativeY > 0 && relativeY < this.canvas.height) {
-                    this.figure.posY = relativeY - this.figure.height / 2;
+                if (relativeY > 0) {
+                    this.figure.posY = relativeY;
                 }
-
+                if (relativeY > this.canvas.height - this.figure.height) {
+                    this.figure.posY = this.canvas.height - this.figure.height;
+                }
                 inMouse = false;
             }
         }
-        
+
 
         this.figure.draw();
     }
