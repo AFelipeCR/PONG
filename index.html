@@ -5,27 +5,31 @@
     <meta charset="utf-8" />
     <meta name="description" content="The Pong game in Javascript language for software engineering 2">
     <link rel="stylesheet" type="text/css" href="./css/estilos.css" media="screen" />
-    <title>Pong v1.2</title>
+    <title>Pong v1.3</title>
 </head>
 
 <body>
-    <section class="game">
+    <aside class="game">
         <section class="game-config">
             <label for="limit-score">Puntos para ganar</label>
-            <input id="limit-score" type="number" max="21" min="3" value="7"
+            <input class="limit-score" id="limit-score" type="number" max="21" min="3" value="7"
                 onchange="if(this.value>maxScore) this.value=maxScore; if(this.value<minScore) this.value=minScore;">
-            <button id="start-button" class="start-btn" onclick="startGame();">Jugar</button>
-            <button id="stop-button" onclick="isStopped=true;" hidden>Stop</button>
+            <button id="start-button" class="buttons start-btn" onclick="startGame();">Jugar</button>
+            <button id="stop-button" class="buttons stop-btn" onclick="isStopped=true;" hidden>Stop</button>
+            <a href="https://github.com/IS-II" target="_blank">
+                <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-15/32/github_social_media-512.png"
+                    alt="Visit us on github :D" class="github-img">
+            </a>
         </section>
-    </section>
+    </aside>
 
-    <section class="game-panel">
-        <section class="score-wrapper">
-            <p class="score-number">0</p>
-            <p class="score-number">0</p>
-        </section>
+    <main class="game-panel">
+        <header class="score-wrapper">
+            <p class="left-player-score">0</p>
+            <p class="right-player-score">0</p>
+        </header>
         <canvas id="canvas_pong" class="canvas-p"></canvas>
-    </section>
+    </main>
 
     <script type="text/javascript">
     	var canvasWidth=document.getElementsByClassName("game-panel")[0].getBoundingClientRect().width;
