@@ -11,8 +11,8 @@ class ControlBall extends Control {
         super(document, canvas, context, ball);
         this.paddleL = paddleL;
         this.paddleR = paddleR;
-        this.deltaX = 2;
-        this.deltaY = 2;
+        this.deltaX = 2*relSize;
+        this.deltaY = 1*relSize;
         this.leftLimit = this.figure.radius;
         this.rightLimit = this.canvas.width - this.figure.radius;
         this.downLimit = this.canvas.height - this.figure.radius;
@@ -32,11 +32,12 @@ class ControlBall extends Control {
                 this.deltaX += 0.1;
             } else if (this.figure.posX + this.deltaX > this.rightLimit) {
                 scoreA++;
-                this.deltaY=1;
-                this.deltaX=2;
+                this.deltaY=1*relSize;
+                this.deltaX=2*relSize;
                 this.figure.posX=this.canvas.width / 2;
                 this.figure.posY=this.canvas.height / 2;
                 this.horizontalDirRight = false;
+                this.verticalDirDown = Math.floor(Math.random() * 2) == 0;
             } else {
                 this.figure.goToRight(this.deltaX);
             }
@@ -50,11 +51,12 @@ class ControlBall extends Control {
                 this.deltaX += 0.1;
             } else if (this.figure.posX - this.deltaX < this.leftLimit) {
                 scoreB++;
-                this.deltaY=1;
-                this.deltaX=2;
+                this.deltaY=1*relSize;
+                this.deltaX=2*relSize;
                 this.figure.posX=this.canvas.width / 2;
                 this.figure.posY=this.canvas.height / 2;
                 this.horizontalDirRight = true;
+                this.verticalDirDown = Math.floor(Math.random() * 2) == 0;
             } else {
                 this.figure.goToLeft(this.deltaX);
             }
