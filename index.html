@@ -3,17 +3,18 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Pong v1.2</title>
+    <title>Pong v1.3a</title>
     <link rel="stylesheet" type="text/css" href="./css/estilos.css" media="screen" />
 </head>
 
 <body>
-    <div class="">
-        <label>Puntos para ganar:</label>
-        <input id="limit-score" type="number" max="21" min="3" value="7" onchange="if(this.value>maxScore) this.value=maxScore; if(this.value<minScore) this.value=minScore;">
-        <button id="start-button" onclick="startGame();">Jugar</button>
-        <button id="stop-button" onclick="isStopped=true;" hidden>Stop</button>
+    <div style="width: 480px; margin-left: auto; margin-right: auto;">
+        <label style="float: left;">Puntos para ganar:</label>
+        <input style="float: left;" id="limit-score" type="number" max="21" min="3" value="7" onchange="if(this.value > maxScore) this.value = maxScore; if(this.value < minScore) this.value=minScore;">
+        <button style="float: right;" id="start-button" onclick="startGame();">Jugar</button>
+        <button style="float: right;" id="stop-button" onclick="isStopped = true;" hidden>Stop</button>
     </div>
+
     <canvas id="canvas_pong" width="480" height="320"></canvas>
 
     <script type="text/javascript" src="./js/figure.js"></script>
