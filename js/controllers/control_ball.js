@@ -7,12 +7,12 @@
 
 class ControlBall extends Control {
 
-    constructor(document, canvas, context, ball, paddleL,paddleR) {
+    constructor(document, canvas, context, ball, paddleL, paddleR) {
         super(document, canvas, context, ball);
         this.paddleL = paddleL;
         this.paddleR = paddleR;
-        this.deltaX = 2*relSize;
-        this.deltaY = 1*relSize;
+        this.deltaX = relSize * 5;
+        this.deltaY = relSize * 2.5;
         this.leftLimit = this.figure.radius;
         this.rightLimit = this.canvas.width - this.figure.radius;
         this.downLimit = this.canvas.height - this.figure.radius;
@@ -23,38 +23,38 @@ class ControlBall extends Control {
     move() {
 
         if (this.horizontalDirRight) {
-            if(this.figure.posY + this.deltaX > this.paddleR.posY
+            if (this.figure.posY + this.deltaX > this.paddleR.posY
                 && this.figure.posY + this.deltaX < this.paddleR.posY + this.paddleR.height
                 && this.figure.posX + this.deltaX > this.paddleR.posX
-                && this.figure.posX + this.deltaX < this.paddleR.posX + this.paddleR.width){
+                && this.figure.posX + this.deltaX < this.paddleR.posX + this.paddleR.width) {
                 this.horizontalDirRight = false;
-                this.deltaY += 0.05*relSize;
-                this.deltaX += 0.1*relSize;
+                this.deltaY += 0.05 * relSize;
+                this.deltaX += 0.1 * relSize;
             } else if (this.figure.posX + this.deltaX > this.rightLimit) {
                 scoreA++;
-                this.deltaY=1*relSize;
-                this.deltaX=2*relSize;
-                this.figure.posX=this.canvas.width / 2;
-                this.figure.posY=this.canvas.height / 2;
+                this.deltaX = relSize * 5;
+                this.deltaY = relSize * 2.5;
+                this.figure.posX = this.canvas.width / 2;
+                this.figure.posY = this.canvas.height / 2;
                 this.horizontalDirRight = false;
                 this.verticalDirDown = Math.floor(Math.random() * 2) == 0;
             } else {
                 this.figure.goToRight(this.deltaX);
             }
         } else {
-            if(this.figure.posY + this.deltaX > this.paddleL.posY
+            if (this.figure.posY + this.deltaX > this.paddleL.posY
                 && this.figure.posY + this.deltaX < this.paddleL.posY + this.paddleL.height
                 && this.figure.posX - this.deltaX < this.paddleL.posX + this.paddleL.width
-                && this.figure.posX - this.deltaX > this.paddleL.posX){
+                && this.figure.posX - this.deltaX > this.paddleL.posX) {
                 this.horizontalDirRight = true;
-                this.deltaY += 0.05*relSize;
-                this.deltaX += 0.1*relSize;
+                this.deltaY += 0.05 * relSize;
+                this.deltaX += 0.1 * relSize;
             } else if (this.figure.posX - this.deltaX < this.leftLimit) {
                 scoreB++;
-                this.deltaY=1*relSize;
-                this.deltaX=2*relSize;
-                this.figure.posX=this.canvas.width / 2;
-                this.figure.posY=this.canvas.height / 2;
+                this.deltaX = relSize * 5;
+                this.deltaY = relSize * 2.5;
+                this.figure.posX = this.canvas.width / 2;
+                this.figure.posY = this.canvas.height / 2;
                 this.horizontalDirRight = true;
                 this.verticalDirDown = Math.floor(Math.random() * 2) == 0;
             } else {
@@ -62,18 +62,18 @@ class ControlBall extends Control {
             }
         }
 
-        if(this.verticalDirDown){
-             if (this.figure.posY + this.deltaY > this.downLimit) {
+        if (this.verticalDirDown) {
+            if (this.figure.posY + this.deltaY > this.downLimit) {
                 this.verticalDirDown = false;
-             }else{
+            } else {
                 this.figure.goToDown(this.deltaY);
-             }
-        }else{
-            if(this.figure.posY - this.deltaY < this.leftLimit){
+            }
+        } else {
+            if (this.figure.posY - this.deltaY < this.leftLimit) {
                 this.verticalDirDown = true;
-             }else{
+            } else {
                 this.figure.goToUp(this.deltaY);
-             }
+            }
         }
 
         this.figure.draw();
