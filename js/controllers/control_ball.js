@@ -11,8 +11,8 @@ class ControlBall extends Control {
         super(document, canvas, context, ball);
         this.paddleL = paddleL;
         this.paddleR = paddleR;
-        this.deltaX = relSize * this.canvas.width / (this.canvas.width * 0.2);
-        this.deltaY = relSize * this.canvas.height / (this.canvas.height * 0.4);
+        this.deltaX = relSize * 5;
+        this.deltaY = relSize * 2.5;
         this.leftLimit = this.figure.radius;
         this.rightLimit = this.canvas.width - this.figure.radius;
         this.downLimit = this.canvas.height - this.figure.radius;
@@ -32,8 +32,8 @@ class ControlBall extends Control {
                 this.deltaX += 0.1 * relSize;
             } else if (this.figure.posX + this.deltaX > this.rightLimit) {
                 scoreA++;
-                this.deltaX = relSize * this.canvas.width / (this.canvas.width * 0.2);
-                this.deltaY = relSize * this.canvas.height / (this.canvas.height * 0.4);
+                this.deltaX = relSize * 5;
+                this.deltaY = relSize * 2.5;
                 this.figure.posX = this.canvas.width / 2;
                 this.figure.posY = this.canvas.height / 2;
                 this.horizontalDirRight = false;
@@ -51,8 +51,8 @@ class ControlBall extends Control {
                 this.deltaX += 0.1 * relSize;
             } else if (this.figure.posX - this.deltaX < this.leftLimit) {
                 scoreB++;
-                this.deltaX = relSize * this.canvas.width / (this.canvas.width * 0.2);
-                this.deltaY = relSize * this.canvas.height / (this.canvas.height * 0.4);
+                this.deltaX = relSize * 5;
+                this.deltaY = relSize * 2.5;
                 this.figure.posX = this.canvas.width / 2;
                 this.figure.posY = this.canvas.height / 2;
                 this.horizontalDirRight = true;
